@@ -1,0 +1,17 @@
+{% extends "WebMainBundle::layout.html.twig" %}
+
+{# override the body block from embedded.html.twig #}
+{% block content %}
+    <div id="index">
+    <ul>
+    {% for top in category %}
+        <li class="category block">
+            <a href="">
+                <span class="photo block margin0auto center"><img src="{{ asset('images/category/'~top.photo)}}" alt="{{top.name}}" title="{{top.name}}"/></span>
+                <span class="test name block center"><strong>{{top.name}}</strong></span>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

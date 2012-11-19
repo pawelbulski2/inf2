@@ -1,0 +1,191 @@
+<?php
+//Web/MainBundle/Entity/Category.php
+
+namespace Web\MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="category")
+ * @ORM\Entity(repositoryClass = "Web\MainBundle\Entity\CategoryRepository")
+ */
+
+class Category
+{
+    
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     * @ORM\Column(type = "integer", length = 11, nullable = true)
+     */
+    protected $idt;
+    
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $name;
+    
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $slug;
+    
+    /**
+     * @ORM\Column(type="string", length=100, nullable = true)
+     */
+    protected $photo;
+    
+    /**
+     * @ORM\OneToMany(targetEntity = "Ad", mappedBy = "Category")
+     */
+    protected $ad;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ad = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idt
+     *
+     * @param integer $idt
+     * @return Category
+     */
+    public function setIdt($idt)
+    {
+        $this->idt = $idt;
+    
+        return $this;
+    }
+
+    /**
+     * Get idt
+     *
+     * @return integer 
+     */
+    public function getIdt()
+    {
+        return $this->idt;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Category
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Category
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set photo
+     *
+     * @param string $photo
+     * @return Category
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return string 
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * Add ad
+     *
+     * @param Web\MainBundle\Entity\Ad $ad
+     * @return Category
+     */
+    public function addAd(\Web\MainBundle\Entity\Ad $ad)
+    {
+        $this->ad[] = $ad;
+    
+        return $this;
+    }
+
+    /**
+     * Remove ad
+     *
+     * @param Web\MainBundle\Entity\Ad $ad
+     */
+    public function removeAd(\Web\MainBundle\Entity\Ad $ad)
+    {
+        $this->ad->removeElement($ad);
+    }
+
+    /**
+     * Get ad
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getAd()
+    {
+        return $this->ad;
+    }
+}
