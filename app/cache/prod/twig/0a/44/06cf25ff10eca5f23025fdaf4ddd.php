@@ -28,7 +28,38 @@ class __TwigTemplate_0a4406cf25ff10eca5f23025fdaf4ddd extends Twig_Template
     public function block_content($context, array $blocks = array())
     {
         // line 5
-        echo "    
+        echo "    <div id=\"index\">
+    <ul>
+    ";
+        // line 7
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "category"));
+        foreach ($context['_seq'] as $context["_key"] => $context["top"]) {
+            // line 8
+            echo "        <li class=\"category block\">
+            <a href=\"\">
+                <span class=\"photo block margin0auto center\"><img src=\"";
+            // line 10
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(("images/category/" . $this->getAttribute($this->getContext($context, "top"), "photo"))), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "top"), "name"), "html", null, true);
+            echo "\" title=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "top"), "name"), "html", null, true);
+            echo "\"/></span>
+                <span class=\"test name block center\"><strong>";
+            // line 11
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "top"), "name"), "html", null, true);
+            echo "</strong></span>
+            </a>
+        </li>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['top'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 15
+        echo "    </ul>
+</div>
 ";
     }
 
@@ -44,6 +75,6 @@ class __TwigTemplate_0a4406cf25ff10eca5f23025fdaf4ddd extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  29 => 5,  26 => 4,);
+        return array (  59 => 15,  49 => 11,  41 => 10,  37 => 8,  33 => 7,  29 => 5,  26 => 4,);
     }
 }
