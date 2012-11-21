@@ -2132,8 +2132,8 @@
     <service id="doctrine.orm.default_manager_configurator" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator">
       <argument type="collection"/>
     </service>
-    <service id="doctrine.orm.default_entity_manager" class="EntityManager50accf5999919_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager">
-      <file>D:/wamp/www/infouslugi.pl/app/cache/dev/jms_diextra/doctrine/EntityManager_50accf5999919.php</file>
+    <service id="doctrine.orm.default_entity_manager" class="EntityManager50ad0a20e6124_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager">
+      <file>C:/xampp/htdocs/symfony2/app/cache/dev/jms_diextra/doctrine/EntityManager_50ad0a20e6124.php</file>
       <argument type="service">
         <service class="Doctrine\ORM\EntityManager" factory-method="create" public="false">
           <argument type="service" id="doctrine.dbal.default_connection"/>

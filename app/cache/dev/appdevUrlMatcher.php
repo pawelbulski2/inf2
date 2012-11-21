@@ -167,6 +167,16 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::contactAction',  '_route' => '_demo_contact',);
         }
 
+        // login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'AcmeSecurityBundle:Security:login',  '_route' => 'login',);
+        }
+
+        // login_check
+        if ($pathinfo === '/login_check') {
+            return array('_route' => 'login_check');
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
