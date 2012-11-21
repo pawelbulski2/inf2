@@ -7437,3 +7437,8 @@
 [2012-11-20 00:11:31] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse". [] []
 [2012-11-20 00:11:31] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\StreamedResponseListener::onKernelResponse". [] []
 [2012-11-20 00:11:31] event.DEBUG: Notified event "kernel.terminate" to listener "Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener::onKernelTerminate". [] []
+[2012-11-21 13:03:40] doctrine.DEBUG: SHOW FULL TABLES WHERE Table_type = 'BASE TABLE' [] []
+[2012-11-21 13:03:41] doctrine.DEBUG: SHOW FULL TABLES WHERE Table_type = 'BASE TABLE' [] []
+[2012-11-21 13:03:41] doctrine.DEBUG: CREATE TABLE ad (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(100) NOT NULL, categoryFK INT DEFAULT NULL, INDEX IDX_77E0ED58B07E2AE7 (categoryFK), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB [] []
+[2012-11-21 13:03:41] doctrine.DEBUG: CREATE TABLE category (id INT AUTO_INCREMENT NOT NULL, idt INT DEFAULT NULL, name VARCHAR(100) NOT NULL, slug VARCHAR(100) NOT NULL, photo VARCHAR(100) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB [] []
+[2012-11-21 13:03:41] doctrine.DEBUG: ALTER TABLE ad ADD CONSTRAINT FK_77E0ED58B07E2AE7 FOREIGN KEY (categoryFK) REFERENCES category (id) [] []
