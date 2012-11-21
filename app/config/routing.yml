@@ -18,3 +18,9 @@ _demo:
     resource: "@AcmeDemoBundle/Controller/DemoController.php"
     type:     annotation
     prefix:   /demo
+    
+login:
+    pattern:   /login
+    defaults:  { _controller: AcmeSecurityBundle:Security:login }
+login_check:
+    pattern:   /login_check
